@@ -29,14 +29,12 @@ $$ \frac{\partial}{\partial p_{u,k}} S S E=\frac{\partial}{\partial p_{u,k}}\lef
  $$ \frac{\partial}{\partial q_{i,k}} S S E=\frac{\partial}{\partial q_{i,k}}\left(\frac{1}{2}e_{u i}^{2}\right) =e_{u i} \frac{\partial}{\partial q_{i,k}} e_{u i}=e_{u i} \frac{\partial}{\partial q_{i,k}}\left(r_{u i}-\sum_{k=1}^{K} p_{u,k} q_{i,k}\right)=-e_{u i} p_{u,k} $$
 
 
- $$ \min {\boldsymbol{q}^{}, \boldsymbol{p}^{}} \frac{1}{2} \sum{(u, i) \in K}\left(\boldsymbol{r}{\mathrm{ui}}-p{u}^{T} q_{i}\right)^{2}
-
-\lambda\left(\left|p_{u}\right|^{2}+\left|q_{i}\right|^{2}\right) $$
+ $$ \min_{\boldsymbol{q}^{}, \boldsymbol{p}^{}} \frac{1}{2} \sum_{(u, i) \in K}\left(\boldsymbol{r}{\mathrm{ui}}-p{u}^{T} q_{i}\right)^{2}+\lambda\left(\left|p_{u}\right|^{2}+\left|q_{i}\right|^{2}\right) $$
 ### Bias SVD
 $$ \begin{aligned} \min_{q^{*}, p^{*}} \frac{1}{2} \sum_{(u, i) \in K} &\left(r_{u i}-\left(\mu+b_{u}+b_{i}+q_{i}^{T} p_{u}\right)\right)^{2} \ &+\lambda\left(\left||p_{u}|\right|^{2}+\left||q_{i}|\right|^{2}+b_{u}^{2}+b_{i}^{2}\right) \end{aligned} $$
 the gradients are:   
-$ \frac{\partial}{\partial b_{i}} S S E=-e_{u i}+\lambda b_{i} \ $   
-$ \frac{\partial}{\partial b_{u}} S S E=-e_{u i}+\lambda b_{u} \ $
+$ \frac{\partial}{\partial b_{i}}SSE=-e_{ui}+\lambda b_{i} \ $   
+$ \frac{\partial}{\partial b_{u}}SSE=-e_{ui}+\lambda b_{u} \ $
 
 ## References
  [Fun-Rec推荐算法](https://github.com/datawhalechina/fun-rec)
