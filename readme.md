@@ -36,5 +36,14 @@ the gradients are:
 $ \frac{\partial}{\partial b_{i}}SSE=-e_{ui}+\lambda b_{i} \ $   
 $ \frac{\partial}{\partial b_{u}}SSE=-e_{ui}+\lambda b_{u} \ $
 
+## Vector Recall
+ $$ \hat{y}(\mathbf{x}):=w_{0}+\sum_{i=1}^{n} w_{i} x_{i}+\sum_{i=1}^{n} \sum_{j=i+1}^{n}\left\langle\mathbf{v}{i}, \mathbf{v}{j}\right\rangle x_{i} x_{j} $$
+化简之后可以得到，如下表达式，其中计算的复杂度降低到O(kn)
+  $$ \begin{aligned} & \sum_{i=1}^{n} \sum_{j=i+1}^{n}\left\langle\mathbf{v}{i}, \mathbf{v}{j}\right\rangle x_{i} x_{j} \\ =& \frac{1}{2} \sum_{i=1}^{n} \sum_{j=1}^{n}\left\langle\mathbf{v}{i}, \mathbf{v}{j}\right\rangle x_{i} x_{j}-\frac{1}{2} \sum_{i=1}^{n}\left\langle\mathbf{v}{i}, \mathbf{v}{i}\right\rangle x_{i} x_{i} \\ =& \frac{1}{2}\left(\sum_{i=1}^{n} \sum_{j=1}^{n} \sum_{f=1}^{k} v_{i, f} v_{j, f} x_{i} x_{j}-\sum_{i=1}^{n} \sum_{f=1}^{k} v_{i, f} v_{i, f} x_{i} x_{i}\right) \\ =& \frac{1}{2} \sum_{f=1}^{k}\left(\left(\sum_{i=1}^{n} v_{i, f} x_{i}\right)^{}\left(\sum_{j=1}^{n} v_{j, f} x_{j}\right)-\sum_{i=1}^{n} v_{i, f}^{2} x_{i}^{2}\right) \\ =& \frac{1}{2} \sum_{f=1}^{k}\left(\left(\sum_{i=1}^{n} v_{i, f} x_{i}\right)^{2}-\sum_{i=1}^{n} v_{i, f}^{2} x_{i}^{2}\right) \end{aligned} $$
+
+
 ## References
  [Fun-Rec推荐算法](https://github.com/datawhalechina/fun-rec)
+
+
+
